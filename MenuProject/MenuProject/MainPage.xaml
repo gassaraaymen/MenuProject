@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MenuProject"
+             x:Class="MenuProject.MainPage">
+
+    <MasterDetailPage.Master>
+
+        <ContentPage  BackgroundColor="#443d42" Title="Test">
+            <StackLayout>
+                <StackLayout>
+                    <Image Source="logo.png"></Image>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <StackLayout Orientation="Vertical" Padding="5,10,5,0">
+
+
+
+                        <Image Source="MyAccount" HeightRequest="50" WidthRequest="50" ></Image>
+                        <Image Source="Shop" HeightRequest="35" WidthRequest="5" ></Image>
+                        <Image Source="FAQ" HeightRequest="35" WidthRequest="5"  Margin="5" ></Image>
+                        <Image Source="Notification" HeightRequest="35" WidthRequest="5"  Margin="5"></Image>
+
+
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Vertical"  Padding="5,10,5,0" >
+
+
+                        <ListView x:Name="ListView1" SeparatorColor="Gray"   Margin="10" ItemSelected="LV1" >
+                            <ListView.ItemTemplate >
+
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Name}" TextColor="White" VerticalTextAlignment="Center" ></Label>
+                                            <Label Text="{Binding Status}" TextColor="White" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TranslationX="-15"  ></Label>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+
+
+                            </ListView.ItemTemplate>
+
+                        </ListView>
+
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal"  Padding="10" HorizontalOptions="FillAndExpand" >
+                    <Image Source="LogOut.png" HorizontalOptions="Start" WidthRequest="35"></Image>
+                    <Label Text="LOGOUT"  TextColor="White" FontSize="14" HorizontalOptions="Start" Margin="7"/>
+                </StackLayout>
+            </StackLayout>
+
+        </ContentPage>
+
+    </MasterDetailPage.Master>
+
+
+    <MasterDetailPage.Detail>
+        <ContentPage  BackgroundColor="White">
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>
